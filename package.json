@@ -1,0 +1,26 @@
+{
+  "name": "gridsky-website",
+  "version": "0.0.1",
+  "private": true,
+  "author": {
+    "name": "dxlliv",
+    "url": "https://github.com/dxlliv"
+  },
+  "scripts": {
+    "build": "nuxt generate",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate --dev",
+    "postinstall": "nuxt prepare",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "@nuxt/fonts": "^0.10.2",
+    "@nuxt/icon": "^1.10.0",
+    "@nuxtjs/i18n": "^8.5.6",
+    "nuxt": "^3.14.1592",
+    "nuxt-swiper": "^2.0.0",
+    "obelisk.js": "https://github.com/nosir/obelisk.js.git",
+    "sass": "^1.81.0",
+    "vite-plugin-vuetify": "^2.0.4"
+  }
+}

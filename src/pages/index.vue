@@ -36,7 +36,8 @@ function onLaunch() {
 
 useSeoMeta({
   title: 'Bluesky with unleashed creativity',
-  description: 'Gridsky brings the Instagram experience to Bluesky, offering an alternative client that unleashes boundless creativity in your favorite decentralized network'
+  description: 'Gridsky brings the Instagram experience to Bluesky, offering an alternative client that unleashes boundless creativity in your favorite decentralized network',
+  ogImage: '/assets/og-image.png'
 })
 </script>
 

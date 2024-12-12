@@ -10,8 +10,12 @@ useHead({
 
 <template>
   <v-app>
+
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
+
+    <AppSplash />
+
   </v-app>
 </template>

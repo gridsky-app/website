@@ -23,14 +23,15 @@ function onLaunchClick(e: any) {
     <div class="mt-2">
       <a
           href="https://gridsky.app"
-          class="text-grey-lighten-1 mr-4"
+          class="text-grey mr-4"
           @click="onLaunchClick"
       >
         Launch
       </a>
       <a
-          href="https://patreon.com/dxlliv" target="_blank"
-          class="text-grey-lighten-1"
+          href="https://patreon.com/dxlliv"
+          target="_blank"
+          class="text-grey"
       >
         Get early access features
       </a>

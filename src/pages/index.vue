@@ -1,8 +1,10 @@
 <script setup lang="ts">
-import {useDisplay} from "vuetify";
+import {useDisplay} from "vuetify"
+
+const display = useDisplay()
+const launcher = ref(true)
 
 const slider: any = useTemplateRef('slider')
-const display = useDisplay()
 
 const firstSliderWidth = computed(() => {
   if (display.lgAndUp.value) {
@@ -27,15 +29,28 @@ onMounted(() => {
     return
   }
 
+  const sliderConfig = {
+    on: {
+      slideChange() {
+        onLaunch()
+      }
+    }
+  }
+
+  Object.assign(slider.value, sliderConfig)
+
   slider.value.initialize()
 })
 
 function onLaunch() {
   slider.value.swiper.slideTo(1, 500)
+
+  // iframe launcher is no more needed
+  launcher.value = false
 }
 
 useSeoMeta({
-  title: 'Bluesky with unleashed creativity',
+  title: 'Bluesky with creativity superpowers',
   description: 'Gridsky brings the Instagram experience to Bluesky, offering an alternative client that unleashes boundless creativity in your favorite decentralized network',
   ogImage: '/assets/og-image.png'
 })
@@ -56,18 +71,23 @@ useSeoMeta({
             class="fill-height" style="align-content: center;"
         >
 
-          <AppIntro @launch="onLaunch" />
+          <AppIntro @launch="onLaunch"/>
 
         </v-col>
-        <v-col class="hidden-sm-and-down" />
+        <v-col class="hidden-sm-and-down"/>
       </v-row>
 
     </swiper-slide>
-    <swiper-slide style="width: 100vw;">
+    <client-only>
+      <swiper-slide style="width: 100vw;">
 
-      <Iframe />
+        <AppIframe
+            :launcher="launcher"
+            @launch="onLaunch"
+        />
 
-    </swiper-slide>
+      </swiper-slide>
+    </client-only>
   </swiper-container>
 </template>
 

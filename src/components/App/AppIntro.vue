@@ -20,7 +20,7 @@ function onLaunchClick(e: any) {
       Bringing the Instagram experience<br />
       to the Bluesky decentralized network.
     </p>
-    <div class="mt-2">
+    <div class="text-subtitle-1 mt-2">
       <a
           href="https://gridsky.app"
           class="text-grey mr-4"
@@ -42,13 +42,11 @@ function onLaunchClick(e: any) {
 <style scoped lang="scss">
 @media(max-width: 640px) {
   .text-h1 {
-    font-size: 88px !important;
+    font-size: 76px !important;
   }
 
   .text-subtitle-1 {
-    br {
-      display: none;
-    }
+    font-size: 17px !important;
   }
 }
 </style>

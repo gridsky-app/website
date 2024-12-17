@@ -1,21 +1,7 @@
 <script setup lang="ts">
-defineProps<{
-  launcher: boolean
-}>()
-
 const emit = defineEmits(['launch'])
 
 const iframeOpacity = ref(false)
-
-onMounted(() => {
-  window.addEventListener('message', function(event) {
-    if (event.data === 'mounted') {
-      setTimeout(() => {
-        iframeOpacity.value = true
-      }, 1250)
-    }
-  })
-})
 
 const iframeClasses = computed(() => {
   const classes = ['gsky-iframe']
@@ -26,13 +12,20 @@ const iframeClasses = computed(() => {
 
   return classes
 })
+
+onMounted(() => {
+  window.addEventListener('message', function(event) {
+    if (event.data === 'mounted') {
+      iframeOpacity.value = true
+    }
+  })
+})
 </script>
 
 <template>
   <div :class="iframeClasses">
-    <iframe src="https://gridsky.app" />
+    <iframe src="https://gridsky.app/welcome" />
     <div
-        v-if="launcher && $vuetify.display.width >= 640"
         class="gsky-iframe__launcher"
         @click="emit('launch')"
     />
@@ -52,6 +45,12 @@ iframe {
   width: calc(100vw + 1px);
   border-left: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
   margin-left: -1px;
+
+  @media(max-width: 599px) {
+    width: 100vw;
+    border-left: 0;
+    margin-left: 0;
+  }
 
   &--visible {
     iframe {

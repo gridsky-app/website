@@ -2,7 +2,6 @@
 import {useDisplay} from "vuetify"
 
 const display = useDisplay()
-const launcher = ref(true)
 
 const slider: any = useTemplateRef('slider')
 
@@ -45,8 +44,9 @@ onMounted(() => {
 function onLaunch() {
   slider.value.swiper.slideTo(1, 500)
 
-  // iframe launcher is no more needed
-  launcher.value = false
+  setTimeout(() => {
+    window.location.href = 'https://gridsky.app'
+  }, display.mdAndUp ? 7000 : 2000)
 }
 
 useSeoMeta({
@@ -82,7 +82,6 @@ useSeoMeta({
       <swiper-slide style="width: 100vw;">
 
         <AppIframe
-            :launcher="launcher"
             @launch="onLaunch"
         />
 

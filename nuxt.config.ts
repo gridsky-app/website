@@ -13,10 +13,7 @@ export default defineNuxtConfig({
     app: {
         head: {
             link: [
-                {rel: 'icon', type: 'image/x-icon', href: '/favicon.png'},
-            ],
-            script: [
-                { src: 'https://cdn.sellix.io/static/js/embed.js', defer: true }
+                {rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg'},
             ],
         }
     },

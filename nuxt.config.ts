@@ -26,6 +26,7 @@ export default defineNuxtConfig({
     },
 
     css: [
+        'vuetify/styles',
         '@/styles/index.scss',
         'swiper/css',
         'swiper/css/pagination',
